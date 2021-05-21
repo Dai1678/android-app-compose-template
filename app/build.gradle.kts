@@ -16,7 +16,7 @@ android {
   buildToolsVersion = Versions.buildToolsVersion
 
   defaultConfig {
-    applicationId = "dev.dai.sample"
+    applicationId = "dev.dai.compose_sample"
     minSdk = Versions.minSdkVersion
     targetSdk = Versions.targetSdkVersion
     versionCode = generateVersionCode()
@@ -101,7 +101,7 @@ releasesHub {
   pullRequestsMax = 10
   baseBranch = "develop"
   gitHubRepositoryOwner = "Dai1678"
-  gitHubRepositoryName = "android-app-template"
+  gitHubRepositoryName = "android-app-compose-template"
 }
 
 fun generateVersionCode(): Int {

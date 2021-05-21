@@ -10,7 +10,7 @@
 
 ```
   defaultConfig {
-    applicationId "dev.dai.sample" // ← 修正
+    applicationId "dev.dai.compose_sample" // ← 修正
     ...
   }
 ```
@@ -20,7 +20,7 @@
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="dev.dai.sample"> //  ← 修正
+  package="dev.dai.compose_sample"> //  ← 修正
 ```
 
 ### Github Actionsのセットアップ
