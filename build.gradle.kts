@@ -2,10 +2,8 @@
 buildscript {
   repositories {
     google()
-    jcenter()
-    maven {
-      url = uri("https://plugins.gradle.org/m2/")
-    }
+    mavenCentral()
+    maven(url = "https://plugins.gradle.org/m2/")
   }
   dependencies {
     classpath(Versions.buildGradle)
@@ -13,7 +11,6 @@ buildscript {
     classpath(Versions.Kotlin.kotlin)
     classpath(Versions.kotlinter)
     classpath(Versions.licenseToolsPlugin)
-    classpath(Versions.Navigation.safeArgs)
     classpath(Versions.releasesHub)
 
     // NOTE: Do not place your application dependencies here; they belong
@@ -24,7 +21,7 @@ buildscript {
 allprojects {
   repositories {
     google()
-    jcenter()
+    mavenCentral()
   }
 }
 

@@ -8,18 +8,17 @@ plugins {
   id("dagger.hilt.android.plugin")
   id("org.jmailen.kotlinter")
   id("com.cookpad.android.plugin.license-tools")
-  id("androidx.navigation.safeargs.kotlin")
   id("com.dipien.releaseshub.gradle.plugin")
 }
 
 android {
-  compileSdkVersion(Versions.compileSdkVersion)
-  buildToolsVersion(Versions.buildToolsVersion)
+  compileSdk = Versions.compileSdkVersion
+  buildToolsVersion = Versions.buildToolsVersion
 
   defaultConfig {
     applicationId = "dev.dai.sample"
-    minSdkVersion(Versions.minSdkVersion)
-    targetSdkVersion(Versions.targetSdkVersion)
+    minSdk = Versions.minSdkVersion
+    targetSdk = Versions.targetSdkVersion
     versionCode = generateVersionCode()
     versionName = generateVersionName()
 
@@ -59,8 +58,14 @@ android {
   }
 
   buildFeatures {
-    viewBinding = true
-    dataBinding = true
+    compose = true
+
+    // Disable unused AGP features
+    buildConfig = false
+    aidl = false
+    renderScript = false
+    resValues = false
+    shaders = false
   }
 
   compileOptions {
@@ -72,8 +77,17 @@ android {
     jvmTarget = "1.8"
   }
 
-  lintOptions {
+  composeOptions {
+    kotlinCompilerExtensionVersion = "1.0.0-beta07"
+  }
+
+  lint {
     isAbortOnError = false
+  }
+
+  packagingOptions {
+    exclude("META-INF/AL2.0")
+    exclude("META-INF/LGPL2.1")
   }
 }
 
@@ -122,27 +136,39 @@ fun generateVersionName(): String {
 }
 
 dependencies {
+  implementation(Versions.Accompanist.coil)
+  implementation(Versions.Accompanist.insets)
+  implementation(Versions.Accompanist.pager)
+  implementation(Versions.Accompanist.systemUiController)
+  implementation(Versions.Accompanist.swipeRefreshLayout)
   implementation(Versions.activity)
-  implementation(Versions.appCompat)
+  implementation(Versions.Compose.animation)
+  implementation(Versions.Compose.compiler)
+  implementation(Versions.Compose.foundation)
+  implementation(Versions.Compose.layout)
+  implementation(Versions.Compose.iconsExtended)
+  implementation(Versions.Compose.material)
+  implementation(Versions.Compose.runtime)
+  implementation(Versions.Compose.ui)
+  implementation(Versions.Compose.uiTest)
+  implementation(Versions.Compose.uiTooling)
+  implementation(Versions.Compose.uiUtil)
   implementation(Versions.constraintLayout)
   implementation(Versions.core)
-  implementation(Versions.Kotlin.coroutine)
-  implementation(Versions.fragment)
+  implementation(Versions.coroutine)
   implementation(Versions.gson)
   implementation(Versions.Hilt.hilt)
   implementation(Versions.Kotlin.stdlib)
   implementation(Versions.Lifecycle.liveData)
   implementation(Versions.Lifecycle.runtime)
   implementation(Versions.Lifecycle.viewModel)
-  implementation(Versions.Lifecycle.savedState)
-  implementation(Versions.material)
+  implementation(Versions.Lifecycle.viewModelCompose)
+  implementation(Versions.Lifecycle.viewModelSavedState)
   implementation(Versions.Okhttp3.loggingInterceptor)
   implementation(Versions.Okhttp3.okhttp3)
-  implementation(Versions.Navigation.fragment)
-  implementation(Versions.Navigation.ui)
-  implementation(Versions.recyclerView)
+  implementation(Versions.material)
+  implementation(Versions.navigation)
   implementation(Versions.retrofit2)
-  implementation(Versions.swipeRefreshLayout)
   implementation(Versions.timber)
   kapt(Versions.Hilt.compiler)
   testImplementation(Versions.ArchCore.testing)
@@ -152,4 +178,15 @@ dependencies {
   testImplementation(Versions.Test.runner)
   androidTestImplementation(Versions.extJunit)
   androidTestImplementation(Versions.espresso)
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+  kotlinOptions {
+    freeCompilerArgs = listOf("-Xallow-jvm-ir-dependencies")
+    // Enable experimental coroutines APIs, including Flow
+    freeCompilerArgs = listOf("-Xopt-in=kotlin.Experimental")
+
+    // Set JVM target to 1.8
+    jvmTarget = "1.8"
+  }
 }
