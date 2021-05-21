@@ -1,4 +1,4 @@
-# Android App Template
+# Android App Compose Template
 
 ## SetUp
 
