@@ -43,7 +43,7 @@ object Versions {
   object Hilt {
     const val compiler = "com.google.dagger:hilt-android-compiler:2.36"
     const val compose = "androidx.hilt:hilt-navigation-compose:1.0.0-alpha02"
-    const val gradle = "com.google.dagger:hilt-android-gradle-plugin:2.35.1"
+    const val gradle = "com.google.dagger:hilt-android-gradle-plugin:2.36"
     const val hilt = "com.google.dagger:hilt-android:2.36"
   }
 
