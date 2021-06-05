@@ -1,6 +1,6 @@
 # Android App Compose Template
 
-![Workflow result](https://github.com/Dai1678/android-app-compose-template/actions/workflows/pull_request.yml)
+[![Run pull request CI](https://github.com/Dai1678/android-app-compose-template/actions/workflows/pull_request.yml/badge.svg)](https://github.com/Dai1678/android-app-compose-template/actions/workflows/pull_request.yml)
 
 ## SetUp
 [セットアップについて](/docs/setup.md)を参照してください。
