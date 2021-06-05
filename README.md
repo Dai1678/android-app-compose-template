@@ -1,40 +1,19 @@
 # Android App Compose Template
 
+[![Run pull request CI](https://github.com/Dai1678/android-app-compose-template/actions/workflows/pull_request.yml/badge.svg)](https://github.com/Dai1678/android-app-compose-template/actions/workflows/pull_request.yml)
+
 ## SetUp
+[セットアップについて](/docs/setup.md)を参照してください。
 
-### パッケージ名の変更
+## Description
+Jetpack Compose用のAndroidアプリプロジェクト テンプレートリポジトリ
 
-まず初めに必ず ① `app/build.gradle` と ② `app/src/main/AndroidManifest.xml` にある `dev.dai.sample` を適切なパッケージ名に変更してください。
+## :bulb: Motivation and Context
+*
 
-① app/build.gradle
+## :camera_flash: Screenshots
+<img src="" width="260">&emsp;<img src="" width="260">
 
-```
-  defaultConfig {
-    applicationId "dev.dai.compose_sample" // ← 修正
-    ...
-  }
-```
-
-② app/src/main/AndroidManifest.xml
-
-```
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="dev.dai.compose_sample"> //  ← 修正
-```
-
-### Github Actionsのセットアップ
-
-それぞれ次の環境変数をGithubに設定しましょう。
-
-| 環境変数名 | 説明 | 取得方法 |
-| --- | --- | --- |
-| DEPLOY_GATE_API_KEY | DeployGateで使用するToken | [DeployGate設定画面 API key](https://deploygate.com/settings) |
-| DEPLOY_GATE_USER_NAME | デプロイ先のユーザー名 | [DeployGate設定画面 プロフィール](https://deploygate.com/settings) |
-
-### Github Pages のセットアップ
-
-* Settings -> Github Pages で Branch を `main` にして ディレクトリを `docs` を選べば、ドキュメントが公開されます。
 
 ## Special Thanks
 * [kgmyshin android-app-template](https://github.com/kgmyshin/android-app-template)
