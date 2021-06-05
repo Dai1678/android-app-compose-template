@@ -11,7 +11,7 @@ object Versions {
   const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
   const val espresso = "androidx.test.espresso:espresso-core:3.3.0"
   const val extJunit = "androidx.test.ext:junit:1.1.2"
-  const val gson = "com.google.code.gson:gson:2.8.6"
+  const val gson = "com.google.code.gson:gson:2.8.7"
   const val junit = "junit:junit:4.13.2"
   const val kotlinter = "org.jmailen.gradle:kotlinter-gradle:3.4.4"
   const val licenseToolsPlugin = "gradle.plugin.com.cookpad.android.plugin:plugin:1.2.6"
