@@ -49,7 +49,7 @@ object Versions {
 
   object Kotlin {
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
-    const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:1.4.32"
+    const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:1.5.10"
   }
 
   object Lifecycle {
