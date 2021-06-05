@@ -26,7 +26,7 @@ object Versions {
     const val insets = "com.google.accompanist:accompanist-insets:0.11.1"
     const val pager = "com.google.accompanist:accompanist-pager:0.11.1"
     const val systemUiController = "com.google.accompanist:accompanist-systemuicontroller:0.10.0"
-    const val swipeRefreshLayout = "com.google.accompanist:accompanist-swiperefresh:0.10.0"
+    const val swipeRefreshLayout = "com.google.accompanist:accompanist-swiperefresh:0.11.1"
   }
 
   object ArchCore {
