@@ -8,7 +8,7 @@ object Versions {
   const val buildGradle = "com.android.tools.build:gradle:7.0.0-beta01"
   const val constraintLayout = "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha07"
   const val core = "androidx.core:core-ktx:1.5.0"
-  const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
+  const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
   const val espresso = "androidx.test.espresso:espresso-core:3.3.0"
   const val extJunit = "androidx.test.ext:junit:1.1.2"
   const val gson = "com.google.code.gson:gson:2.8.6"
