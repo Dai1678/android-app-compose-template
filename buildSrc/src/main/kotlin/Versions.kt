@@ -34,17 +34,10 @@ object Versions {
   }
 
   object Compose {
-    const val animation = "androidx.compose.animation:animation:1.0.0-beta07"
-    const val compiler = "androidx.compose.compiler:compiler:1.0.0-beta07"
-    const val foundation = "androidx.compose.foundation:foundation:1.0.0-beta07"
-    const val layout = "androidx.compose.foundation:foundation-layout:1.0.0-beta07"
     const val iconsExtended = "androidx.compose.material:material-icons-extended:1.0.0-beta07"
     const val material = "androidx.compose.material:material:1.0.0-beta07"
-    const val runtime = "androidx.compose.runtime:runtime:1.0.0-beta07"
     const val ui = "androidx.compose.ui:ui:1.0.0-beta07"
-    const val uiTest = "androidx.compose.ui:ui-test-junit4:1.0.0-beta07"
     const val uiTooling = "androidx.compose.ui:ui-tooling:1.0.0-beta07"
-    const val uiUtil = "androidx.compose.ui:ui-util:1.0.0-beta07"
   }
 
   object Hilt {
