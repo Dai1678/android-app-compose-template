@@ -1,8 +1,7 @@
 name: Run auto update
-on:
-  repository_dispatch:
-  schedule:
-    - cron: '0 12 * * 6'
+
+on: [ workflow_dispatch ]
+
 jobs:
   update_dependencies:
     if: (github.event_name == 'repository_dispatch' && github.event.action == 'update_dependencies') ||
