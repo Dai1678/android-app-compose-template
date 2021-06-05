@@ -22,7 +22,7 @@ object Versions {
   const val timber = "com.jakewharton.timber:timber:4.7.1"
 
   object Accompanist {
-    const val coil = "com.google.accompanist:accompanist-coil:0.10.0"
+    const val coil = "com.google.accompanist:accompanist-coil:0.11.1"
     const val insets = "com.google.accompanist:accompanist-insets:0.10.0"
     const val pager = "com.google.accompanist:accompanist-pager:0.10.0"
     const val systemUiController = "com.google.accompanist:accompanist-systemuicontroller:0.10.0"
