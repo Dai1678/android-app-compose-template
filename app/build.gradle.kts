@@ -1,5 +1,6 @@
 import java.util.Calendar
 import java.util.Locale
+import java.util.TimeZone
 
 plugins {
   id("com.android.application")
@@ -106,7 +107,7 @@ releasesHub {
 }
 
 fun generateVersionCode(): Int {
-  val calendar = Calendar.getInstance(Locale.JAPAN)
+  val calendar = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"), Locale.JAPAN)
   val year = calendar.get(Calendar.YEAR) * 552960
   val month = (calendar.get(Calendar.MONTH) + 1) * 46080
   val day = calendar.get(Calendar.DAY_OF_MONTH) * 1440
@@ -116,19 +117,20 @@ fun generateVersionCode(): Int {
 }
 
 fun generateVersionName(): String {
-  val calendar = Calendar.getInstance(Locale.JAPAN).apply {
+  val calendar = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"), Locale.JAPAN).apply {
     firstDayOfWeek = Calendar.SUNDAY
     minimalDaysInFirstWeek = 4
   }
   val year = (calendar.get(Calendar.YEAR) % 100)
   val week = calendar.get(Calendar.WEEK_OF_YEAR)
 
-  val firstDayOfWeek = Calendar.getInstance(Locale.JAPAN).apply {
-    set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
-    set(Calendar.HOUR_OF_DAY, 0)
-    set(Calendar.MINUTE, 0)
-    set(Calendar.SECOND, 0)
-  }
+  val firstDayOfWeek =
+    Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"), Locale.JAPAN).apply {
+      set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
+      set(Calendar.HOUR_OF_DAY, 0)
+      set(Calendar.MINUTE, 0)
+      set(Calendar.SECOND, 0)
+    }
   val diffTime = calendar.timeInMillis - firstDayOfWeek.timeInMillis
   val diffHourMillis = 1000 * 60 * 60
   val diffHours = (diffTime / diffHourMillis).toInt()
