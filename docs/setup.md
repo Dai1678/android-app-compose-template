@@ -69,6 +69,28 @@ releasesHub {
 }
 ```
 
+長期的にプロジェクトを開発する場合は、週１で自動的にdependenciesをアップデートするように `.github/workflows/weekly_upgrade_dependencies.yml` を修正してください。
+
+* テンプレートリポジトリや、短期間での開発の場合
+
+```
+on: [ workflow_dispatch ] // ← Github Webサイトの Actions から手動でworkflowを実行する設定
+```
+
+* 長期的な開発の場合
+
+```
+on:
+  repository_dispatch:
+  schedule:
+    - cron: '0 12 * * 6' // ← 指定時間に自動的にworkflowを実行する設定
+jobs:
+  update_dependencies:
+    if: (github.event_name == 'repository_dispatch' && github.event.action == 'update_dependencies') ||
+      (github.event_name == 'schedule')
+    runs-on: ubuntu-latest
+```
+
 ### Github Actionsのセットアップ
 
 それぞれ次の環境変数をGithubに設定しましょう。
