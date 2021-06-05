@@ -1,12 +1,13 @@
 ---
-title: Setup
-layout: default
+title: Setup layout: default
 ---
 
 ## プロジェクトのセットアップについて
+
 ### パッケージ名の変更
 
-まず初めに必ず ① `app/build.gradle` と ② `app/src/main/AndroidManifest.xml` にある `dev.dai.sample` を適切なパッケージ名に変更してください。
+まず初めに必ず ① `app/build.gradle` と ② `app/src/main/AndroidManifest.xml` にある `dev.dai.sample`
+を適切なパッケージ名に変更してください。
 
 ① app/build.gradle
 
@@ -69,7 +70,8 @@ releasesHub {
 }
 ```
 
-長期的にプロジェクトを開発する場合は、週１で自動的にdependenciesをアップデートするように `.github/workflows/weekly_upgrade_dependencies.yml` を修正してください。
+長期的にプロジェクトを開発する場合は、週１で自動的にdependenciesをアップデートするように `.github/workflows/weekly_upgrade_dependencies.yml`
+を修正してください。
 
 * テンプレートリポジトリや、短期間での開発の場合
 
@@ -101,6 +103,39 @@ jobs:
 | DEPLOY_GATE_USER_NAME | デプロイ先のユーザー名 | [DeployGate設定画面 プロフィール](https://deploygate.com/settings) |
 | USER_NAME | ReleasesHubで自動的にPRを作るために必要 | Githubのユーザーネーム |
 | USER_EMAIL | ReleasesHubで自動的にPRを作るために必要 | Gitで使用しているメールアドレスなど |
+| SIGNING_KEY | PlayConsoleにアップロードするAABの署名に必要 | AndroidStudioで署名に使用した値 |
+| ALIAS | PlayConsoleにアップロードするAABの署名に必要 | AndroidStudioで署名に使用した値 |
+| KEY_STORE_PASSWORD | PlayConsoleにアップロードするAABの署名に必要 | AndroidStudioで署名に使用した値 |
+| KEY_PASSWORD | PlayConsoleにアップロードするAABの署名に必要 | AndroidStudioで署名に使用した値 |
+| SERVICE_ACCOUNT_JSON | PlayConsoleにアップロードするために必要 | PlayConsole APIアクセス サービスアカウント で作成したJSON |
+
+### PlayConsoleにアップロードするworkflowのセットアップ
+
+`.github/workflows/deploy_google_play.yml` の `packageName` を適切なパッケージ名に変更してください。
+`BUILD_TOOLS_VERSION` が設定されている値と異なっていたら変更してください。
+
+```
+- name: Sign AAB
+    uses: r0adkll/sign-android-release@v1
+    with:
+      releaseDirectory: app/build/outputs/bundle/release
+      signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+      alias: ${{ secrets.ALIAS }}
+      keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+      keyPassword: ${{ secrets.KEY_PASSWORD }}
+    env:
+      BUILD_TOOLS_VERSION: "30.0.3" // ← build.gradleで設定している値と同じものに修正
+```
+
+```
+- name: Deploy to Play Store (INTERNAL)
+    uses: r0adkll/upload-google-play@v1
+    with:
+      serviceAccountJson: service_account.json
+      packageName: dev.dai.sample // ← 修正
+      releaseFile: app/build/outputs/bundle/release/app-release.aab
+      track: internal
+```
 
 ### Github Pages のセットアップ
 
