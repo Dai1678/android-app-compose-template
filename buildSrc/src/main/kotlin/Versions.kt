@@ -5,7 +5,7 @@ object Versions {
   const val targetSdkVersion = 30
 
   const val activity = "androidx.activity:activity-compose:1.3.0-alpha08"
-  const val buildGradle = "com.android.tools.build:gradle:7.0.0-beta01"
+  const val buildGradle = "com.android.tools.build:gradle:7.0.0"
   const val constraintLayout = "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha07"
   const val core = "androidx.core:core-ktx:1.5.0"
   const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
