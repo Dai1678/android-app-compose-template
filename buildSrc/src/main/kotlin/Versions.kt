@@ -6,6 +6,7 @@ object Versions {
 
   const val activity = "androidx.activity:activity-compose:1.3.0-alpha08"
   const val buildGradle = "com.android.tools.build:gradle:7.0.0"
+  const val coil = "io.coil-kt:coil-compose:1.3.1"
   const val constraintLayout = "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha07"
   const val core = "androidx.core:core-ktx:1.5.0"
   const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
@@ -22,11 +23,12 @@ object Versions {
   const val timber = "com.jakewharton.timber:timber:4.7.1"
 
   object Accompanist {
-    const val coil = "com.google.accompanist:accompanist-coil:0.11.1"
-    const val insets = "com.google.accompanist:accompanist-insets:0.11.1"
-    const val pager = "com.google.accompanist:accompanist-pager:0.11.1"
-    const val systemUiController = "com.google.accompanist:accompanist-systemuicontroller:0.11.1"
-    const val swipeRefreshLayout = "com.google.accompanist:accompanist-swiperefresh:0.11.1"
+    const val insets = "com.google.accompanist:accompanist-insets:0.15.0"
+    const val pager = "com.google.accompanist:accompanist-pager:0.15.0"
+    const val permission = "com.google.accompanist:accompanist-permissions:0.15.0"
+    const val placeholder = "com.google.accompanist:accompanist-placeholder:0.15.0"
+    const val systemUiController = "com.google.accompanist:accompanist-systemuicontroller:0.15.0"
+    const val swipeRefreshLayout = "com.google.accompanist:accompanist-swiperefresh:0.15.0"
   }
 
   object ArchCore {
@@ -34,10 +36,12 @@ object Versions {
   }
 
   object Compose {
-    const val iconsExtended = "androidx.compose.material:material-icons-extended:1.0.0-beta07"
-    const val material = "androidx.compose.material:material:1.0.0-beta07"
-    const val ui = "androidx.compose.ui:ui:1.0.0-beta07"
-    const val uiTooling = "androidx.compose.ui:ui-tooling:1.0.0-beta07"
+    const val foundation = "androidx.compose.foundation:foundation:1.0.0"
+    const val iconsCore = "androidx.compose.material:material-icons-core:1.0.0"
+    const val iconsExtended = "androidx.compose.material:material-icons-extended:1.0.0"
+    const val material = "androidx.compose.material:material:1.0.0"
+    const val ui = "androidx.compose.ui:ui:1.0.0"
+    const val uiTooling = "androidx.compose.ui:ui-tooling:1.0.0"
   }
 
   object Hilt {
