@@ -166,7 +166,6 @@ dependencies {
   implementation(Versions.Lifecycle.viewModelSavedState)
   implementation(Versions.Okhttp3.loggingInterceptor)
   implementation(Versions.Okhttp3.okhttp3)
-  implementation(Versions.material)
   implementation(Versions.navigation)
   implementation(Versions.retrofit2)
   implementation(Versions.timber)
