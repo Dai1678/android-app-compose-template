@@ -16,6 +16,7 @@ object Versions {
   const val junit = "junit:junit:4.13.2"
   const val kotlinter = "org.jmailen.gradle:kotlinter-gradle:3.4.4"
   const val licenseToolsPlugin = "gradle.plugin.com.cookpad.android.plugin:plugin:1.2.6"
+  const val material = "com.google.android.material:material:1.4.0"
   const val navigation = "androidx.navigation:navigation-compose:2.4.0-alpha05"
   const val releasesHub = "com.dipien:releases-hub-gradle-plugin:2.0.2"
   const val retrofit2 = "com.squareup.retrofit2:retrofit:2.9.0"
