@@ -80,7 +80,7 @@ android {
   }
 
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.0.0-beta07"
+    kotlinCompilerExtensionVersion = "1.0.0"
   }
 
   lint {
@@ -139,16 +139,20 @@ fun generateVersionName(): String {
 }
 
 dependencies {
-  implementation(Versions.Accompanist.coil)
   implementation(Versions.Accompanist.insets)
   implementation(Versions.Accompanist.pager)
+  implementation(Versions.Accompanist.permission)
+  implementation(Versions.Accompanist.placeholder)
   implementation(Versions.Accompanist.systemUiController)
   implementation(Versions.Accompanist.swipeRefreshLayout)
   implementation(Versions.activity)
+  implementation(Versions.Compose.foundation)
+  implementation(Versions.Compose.iconsCore)
   implementation(Versions.Compose.iconsExtended)
   implementation(Versions.Compose.material)
   implementation(Versions.Compose.ui)
   implementation(Versions.Compose.uiTooling)
+  implementation(Versions.coil)
   implementation(Versions.constraintLayout)
   implementation(Versions.core)
   implementation(Versions.coroutine)
@@ -160,10 +164,10 @@ dependencies {
   implementation(Versions.Lifecycle.viewModel)
   implementation(Versions.Lifecycle.viewModelCompose)
   implementation(Versions.Lifecycle.viewModelSavedState)
-  implementation(Versions.Okhttp3.loggingInterceptor)
-  implementation(Versions.Okhttp3.okhttp3)
   implementation(Versions.material)
   implementation(Versions.navigation)
+  implementation(Versions.Okhttp3.loggingInterceptor)
+  implementation(Versions.Okhttp3.okhttp3)
   implementation(Versions.retrofit2)
   implementation(Versions.timber)
   kapt(Versions.Hilt.compiler)
